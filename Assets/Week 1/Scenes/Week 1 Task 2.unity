@@ -236,7 +236,8 @@ Transform:
   m_LocalPosition: {x: 0.064069584, y: 0.27568543, z: 0.036819424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1541346648}
   m_Father: {fileID: 2064773946}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &69794425
@@ -467,6 +468,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1541346647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541346648}
+  m_Layer: 0
+  m_Name: spawn point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1541346648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541346647}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.41, y: -0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 69794424}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064773944
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c75bb8731a6fec43bc21e41b8e54569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 1023577644609296882, guid: d379d7a9e56da164bbc18a9535b14ec7, type: 3}
+  barrel: {fileID: 1541346648}
 --- !u!4 &2064773946
 Transform:
   m_ObjectHideFlags: 0
