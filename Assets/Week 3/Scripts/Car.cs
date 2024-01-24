@@ -9,6 +9,7 @@ public class Car : MonoBehaviour
     public float forwardSpeed = 500;
     public float steeringSpeed = 100;
     Rigidbody2D rigidbody;
+    public float maxSpeed = 500;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -25,6 +26,9 @@ public class Car : MonoBehaviour
     {
         rigidbody.AddTorque(steering * -steeringSpeed * Time.deltaTime);
         Vector2 force = transform.up * acceleration * forwardSpeed * Time.deltaTime;
-        rigidbody.AddForce(force);
+        if (rigidbody.velocity.magnitude < maxSpeed) {
+            rigidbody.AddForce(force);
+        }
+        
     }
 }
