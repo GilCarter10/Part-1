@@ -6,10 +6,11 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     // Start is called before the first frame update
-    Vector2 movement = new Vector2(0, 6);
+    Vector2 movement = new Vector2(0, 4);
     Rigidbody2D rb;
     Boolean down;
     Boolean up;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,24 +21,26 @@ public class Goal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.position.y < 2 && up)
+        if (rb.position.y < 1.5 && up)
         {
             rb.MovePosition(rb.position + movement * Time.deltaTime);
-        } else if (rb.position.y > 2 && up)
+        } else if (rb.position.y > 1.5 && up)
         {
             down = true;
             up = false;
         }
         
-        if (rb.position.y > -2 && down)
+        if (rb.position.y > -1.5 && down)
         {
             rb.MovePosition(rb.position + movement * Time.deltaTime * -1);
         }
-        else if (rb.position.y < -2 && down)
+        else if (rb.position.y < -1.5 && down)
         {
             down = false;
             up = true;
         }
 
     }
+
+
 }

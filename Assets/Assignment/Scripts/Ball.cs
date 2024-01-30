@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
 {
     public GameObject target;
     public GameObject prefab;
-    Vector2 home = new Vector2(0, 0);
+    Vector2 origin = new Vector2(0, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +22,9 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject == target)
         {
-            Instantiate(prefab, home, transform.rotation);
-            Destroy(gameObject);
+            Destroy(prefab);
+            Instantiate(prefab, origin, transform.rotation);
+
         }
     }
 }
