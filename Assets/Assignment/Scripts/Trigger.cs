@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class Trigger : MonoBehaviour
 {
@@ -23,10 +24,10 @@ public class Trigger : MonoBehaviour
     {
         if (collision.gameObject == ball)
         {
-            ball.transform.position = ballPos;
             car.transform.position = carPos;
+            Instantiate(ball, ballPos, transform.rotation);
+            Destroy(ball);
 
-    
         }
 
     }

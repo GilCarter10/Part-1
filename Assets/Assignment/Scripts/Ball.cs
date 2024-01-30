@@ -6,11 +6,13 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public GameObject target;
-    public GameObject prefab;
+    Vector2 carPos = new Vector2(-5, 0);
+    public GameObject car;
     Vector2 origin = new Vector2(0, 0);
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -22,9 +24,18 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject == target)
         {
-            Destroy(prefab);
-            Instantiate(prefab, origin, transform.rotation);
-
+            gameObject.transform.position = origin;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+            car.transform.position = carPos;
+            Instantiate(gameObject, origin, transform.rotation);
+            Destroy(gameObject);
+
+     
+
+    }
+
 }
